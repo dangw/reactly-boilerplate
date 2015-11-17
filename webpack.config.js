@@ -3,7 +3,7 @@ require('babel/register');
 var path = require('path');
 var webpack = require('webpack');
 var ReactRenderPlugin = require('react-render-plugin');
-var objectAssign = require('object-assign');
+var assign = require('object-assign');
 
 module.exports = {
     devtool: 'source-map',
@@ -17,7 +17,8 @@ module.exports = {
             './src/index'
         ],
         vendor: [
-            'react'
+            'react',
+            'reactly'
         ]
     },
     output: {
@@ -30,7 +31,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
         new ReactRenderPlugin({
             component: path.join(__dirname, './src/html.jsx'),
-            props: objectAssign({dev: true}, require('./src/data')),
+            props: assign({dev: true}, require('./src/data')),
             output: path.join(__dirname, './dist/index.html'),
             hot: path.join(__dirname, './src')
         })

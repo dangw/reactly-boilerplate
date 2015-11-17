@@ -20,9 +20,10 @@
   },
   "dependencies": {
     "object-assign": "^4.0.1",
-    "react": "^0.14.0",
+    "react": "^0.14.2",
     "react-dom": "^0.14.0",
-    "react-router": "^1.0.0-rc1"
+    "react-router": "^1.0.0-rc1",
+    "reactly": "^0.1.1"
   },
   "devDependencies": {
     "babel": "^5.8.23",
